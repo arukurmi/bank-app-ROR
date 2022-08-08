@@ -1,0 +1,28 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Accounts</h1>
+
+<div id="accounts">
+  <table class = "table table-striped table-bordered">
+    <thead class = "table-dark">
+      <tr>  
+        <td>Name</td>
+        <td>Email</td>
+        <td>Phone number</td>
+        <td>Account Balance</td>
+      </tr>
+    </thead>
+    <tbody>
+      <% @accounts.each do |account| %>
+      <tr>
+        <td><%= link_to account.name, account %></td>
+        <td><%= account.email %></td>
+        <td><%= account.phone %></td>
+        <td><%= account.acc_bal %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
+
+<%= link_to "Create new account", new_account_path, class:"btn btn-success" %>
